@@ -1,0 +1,740 @@
+/* Estilo general del cuerpo */
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(500deg, #1b0242, #8e6fad);
+    color: #fff;
+    height: 100%;
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(42, 10, 94, 0.9);
+    padding: 0.75rem 1rem; 
+    position: fixed;
+    top: 0.625rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto; 
+    border-radius: 1.875rem;
+    box-shadow: 0rem 0.25rem 0.625rem rgba(16, 1, 44, 0.5);
+    z-index: 1000;
+}
+
+/* Lista de elementos del navbar */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem; 
+    margin: 0;
+    padding: 0;
+    width: auto; 
+    justify-content: center; 
+}
+
+/* Enlaces del navbar */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem; 
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    border-radius: 1.25rem;
+    white-space: nowrap; 
+}
+
+/* Color al pasar el mouse */
+nav a:hover {
+    color: #b48cff;
+}
+
+
+/* ICONO DE HAMBURGUESA */
+input[type="checkbox"] {
+    display: none; 
+}
+
+/* ICONO DE HAMBURGUESA */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.2rem;
+    position: absolute; 
+    left: 1.25rem;  
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+.hamburger div {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #dcaff1;
+}
+
+
+/* Sección Sobre Mí */
+#sobre-mi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Contenedor principal del perfil */
+.perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 50rem;
+}
+
+/* Contenedor de la imagen y los datos personales */
+.perfil-info {
+    display: flex;
+    align-items: flex-start; 
+    width: 100%;
+    max-width: 37.5rem;
+    padding: 1rem;
+}
+
+/* Imagen de perfil */
+.perfil-info img {
+    width: 13.75rem; 
+    height: auto;
+    border-radius: 50%;
+    border: 0.2rem solid #17012c;
+    box-shadow: 0 0 0.75rem 0.2rem rgba(16, 1, 44, 0.5);
+    margin-right: 3rem;
+}
+
+
+/* Contenedor de los datos personales */
+.perfil-datos {
+    text-align: left;
+    margin-top: 0.5rem; 
+}
+
+
+/* Nombre con estilo especial */
+.nombre {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b48cff;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem; 
+}
+
+/* Estilo general de los textos */
+.perfil-datos p {
+    color: #fff;
+    margin: 0.3rem 0;
+}
+
+/* Contenedor del texto biográfico con fondo */
+.perfil-texto {
+    background: rgba(75, 0, 130, 0.2);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-width: 800px;
+    margin-top: 1rem;
+    box-shadow: 0 0 0.75rem 0.2rem rgba(16, 1, 44, 0.5) !important;
+}
+
+/* Estilo del texto dentro del perfil-texto */
+.perfil-texto p {
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+
+/* Sección de Habilidades */
+#habilidades {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#habilidades {
+    padding-top: 0; 
+    margin-top: -5rem; 
+}
+
+/* Título de la sección */
+#habilidades h2 {
+    margin-bottom: 0.5rem; 
+}
+
+/* Contenedor de habilidades */
+.contenedor-habilidades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem; 
+}
+
+
+/* Filas de habilidades */
+.fila-habilidades {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Estilos base */
+.habilidad {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(1.25rem);
+    animation: subir 0.6s ease-out forwards;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+.habilidad:hover {
+    color: #fff;
+    box-shadow: 0 0 0.75rem rgba(180, 140, 255, 0.8), 0 0 0 0.2rem rgba(180, 140, 255, 0.8) inset;
+}
+
+/* Animación de subida */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de retraso en la animación para cada etiqueta */
+.habilidad:nth-child(1) { animation-delay: 0.1s; }
+.habilidad:nth-child(2) { animation-delay: 0.2s; }
+.habilidad:nth-child(3) { animation-delay: 0.3s; }
+.habilidad:nth-child(4) { animation-delay: 0.4s; }
+.habilidad:nth-child(5) { animation-delay: 0.5s; }
+.habilidad:nth-child(6) { animation-delay: 0.6s; }
+.habilidad:nth-child(7) { animation-delay: 0.7s; }
+.habilidad:nth-child(8) { animation-delay: 0.8s; }
+.habilidad:nth-child(9) { animation-delay: 0.9s; }
+.habilidad:nth-child(10) { animation-delay: 1s; }
+.habilidad:nth-child(11) { animation-delay: 1.1s; }
+.habilidad:nth-child(12) { animation-delay: 1.2s; }
+.habilidad:nth-child(13) { animation-delay: 1.3s; }
+.habilidad:nth-child(14) { animation-delay: 1.4s; }
+.habilidad:nth-child(15) { animation-delay: 1.5s; }
+
+
+/* Sección de Proyectos */
+#proyectos {
+    text-align: center; 
+    padding: 0;
+}
+
+/* Contenedor de Proyectos */
+.contenedor-proyectos {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+}
+
+/* Tarjeta de Proyecto */
+.tarjeta {
+    position: relative;
+    width: 25rem;
+    height: 15rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Descripción dentro de la tarjeta */
+.descripcion {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(22, 0, 48, 0.7);
+    color: #fff;
+    padding: 0.8rem;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título y descripción */
+.descripcion h4 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding-bottom: 0.3rem;
+}
+
+.descripcion p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.tarjeta:hover .descripcion {
+    opacity: 1;
+}
+
+/* Estilos de etiquetas */
+.etiquetas {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.tarjeta:hover .etiquetas {
+    opacity: 1;
+}
+
+.etiquetas span {
+    background: rgba(60, 1, 99, 0.459);
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e7c2f8;
+    transition: 0.3s ease-in-out;
+}
+
+.etiquetas span:hover {
+    background: rgba(129, 53, 165, 0.815);
+}
+
+
+
+/* Sección del Formulario */
+#contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+/* Contenedor del formulario */
+.contenedor-formulario {
+    width: 90%;
+    max-width: 30rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Título */
+.contenedor-formulario h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Alineación de campos en línea */
+.fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+.fila .campo {
+    width: 50%;
+}
+
+/* Campos */
+.campo {
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: rgba(80, 10, 120, 0.4);
+    color: white;
+    outline: none;
+    transition: background 0.3s;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus, textarea:focus {
+    background: rgba(80, 10, 120, 0.6);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Botón */
+.botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+button {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #8ea862;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+
+#peliculas-favoritas h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem; 
+}
+
+/* Contenedor de películas */
+.peliculas-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.25rem; 
+    flex-wrap: wrap;
+    padding: 1.25rem; 
+}
+
+/* Tarjeta de película */
+.pelicula-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem; 
+    text-align: center;
+    width: 15rem; 
+    padding: 0.5rem; 
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+/* Efecto hover */
+.pelicula-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0.4rem 1rem rgba(255, 255, 255, 0.4);
+}
+
+/* Imagen de la película */
+.pelicula-card img {
+    width: 100%;
+    height: 20rem; 
+    object-fit: cover;
+    border-radius: 0.5rem; 
+    transition: opacity 0.3s ease;
+}
+
+/* Contenedor de la reseña */
+.pelicula-resena {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 1rem; 
+    border-radius: 0.5rem; 
+    text-align: justify;
+    font-size: 1rem; 
+    box-shadow: inset 0 0 0.5rem rgba(255, 255, 255, 0.2);
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 90%;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Ocultar imagen y mostrar reseña en hover */
+.pelicula-card:hover img {
+    opacity: 0;
+}
+
+.pelicula-card:hover .pelicula-resena {
+    opacity: 1;
+}
+
+/* Contenedor de etiquetas */
+.pelicula-etiquetas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem; 
+    margin-top: 0.5rem; 
+    width: 100%;
+}
+
+/* Etiquetas */
+.pelicula-etiquetas span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 0.625rem; 
+    border-radius: 0.625rem; 
+    font-size: 0.75rem; 
+    color: white;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Agregar margen inferior a la última tarjeta de película */
+.pelicula-card:last-of-type {
+    margin-bottom: 2.5rem; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.25rem; 
+    background: #222;
+    color: white;
+    width: 100%;
+    position: relative;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 0.9375rem; 
+    margin-top: 0.625rem; 
+}
+
+.redes-sociales a {
+    color: white;
+    font-size: 1.5rem; 
+    transition: transform 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    transform: scale(1.2);
+}
+
+
+
+/* Media query para dispositivos móviles */
+@media (max-width: 48rem) { 
+    nav {
+        width: 100%;
+        left: 0;
+        transform: none;
+        border-radius: 0;
+        justify-content: space-between;
+        padding: 0.5rem 1rem; 
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem; 
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(42, 10, 94, 0.95);
+        padding: 1rem 0; 
+        box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3); 
+    }
+
+    #menu-toggle:checked + .hamburger + ul {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Sección Sobre Mí */
+    #sobre-mi .perfil {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sobre-mi .perfil-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #sobre-mi .perfil-img {
+        width: 6.25rem; 
+        height: 6.25rem; 
+        margin-bottom: 1rem; 
+    }
+
+    #sobre-mi .perfil-datos p {
+        margin-bottom: 0.5rem; 
+    }
+
+    #sobre-mi .perfil-texto {
+        margin-top: 1rem; 
+        padding: 1rem; 
+        font-size: 0.9rem; 
+    }
+
+    /* Sección de Habilidades */
+    #habilidades .contenedor-habilidades {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #habilidades .fila-habilidades {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #habilidades .habilidad {
+        margin: 0.5rem; 
+        padding: 0.5rem; 
+        background-color: rgba(75, 0, 130, 0.2);
+        border-radius: 0.5rem; 
+    }
+
+    /* Sección de Proyectos */
+    #proyectos .contenedor-proyectos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #proyectos .tarjeta {
+        width: 100%;
+        max-width: 18.75rem; 
+        margin-bottom: 1rem; 
+    }
+
+    #proyectos .descripcion {
+        text-align: center;
+        padding: 1rem; 
+    }
+
+    /* Sección de Contacto */
+    #contacto .contenedor-formulario {
+        padding: 1rem; 
+    }
+
+    #contacto .fila {
+        flex-direction: column;
+    }
+
+    #contacto .campo {
+        width: 100%;
+        margin-bottom: 1rem; 
+    }
+
+    #contacto .campo input, 
+    #contacto .campo textarea {
+        width: 100%;
+        padding: 0.8rem; 
+        border-radius: 0.5rem;
+        border: 1px solid #ccc;
+    }
+
+    #contacto .botones {
+        text-align: center;
+    }
+
+    /* Sección de Películas Favoritas */
+    #peliculas-favoritas .peliculas-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #peliculas-favoritas .pelicula-card {
+        width: 100%;
+        max-width: 18.75rem; 
+        margin-bottom: 1rem; 
+    }
+
+    #peliculas-favoritas .pelicula-resena {
+        text-align: center;
+        padding: 1rem; 
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 1rem; 
+    }
+
+    footer .redes-sociales a {
+        margin: 0 1rem; 
+        font-size: 1.5rem;
+    }
+}
